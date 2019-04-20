@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--圆形view组件-->
+    <declare-styleable name="CircleImageView">
+        <!--圆形image的外圆环宽度-->
+        <attr name="civ_border_width" format="dimension" />
+        <!--圆环颜色-->
+        <attr name="civ_border_color" format="color" />
+        <!-- -->
+        <attr name="civ_border_overlay" format="boolean" />
+        <!-- -->
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <!--APP标题栏扩展属性-->
+    <declare-styleable name="titleBar">
+        <!--是否显示返回按钮-->
+        <attr name="isShowReturn" format="boolean" />
+        <!--是否显示底部分割线-->
+        <attr name="isShowDivide" format="boolean" />
+        <!--页面标题-->
+        <attr name="title" format="string" />
+        <!--页面标题颜色-->
+        <attr name="titleColor" format="color"/>
+        <!--页面标题大小-->
+        <attr name="titleSize" format="dimension"/>
+        <!--右边操作图标-->
+        <attr name="rightImageRes" format="reference" />
+        <!--右边操作文字-->
+        <attr name="rightTxtString" format="string" />
+        <!--右边操作文字颜色-->
+        <attr name="rightTxtColor" format="color" />
+        <!--右边操作文字大小-->
+        <attr name="rightTextSize" format="dimension"/>
+        <!--标题栏背景颜色-->
+        <attr name="bar_background" format="color" />
+    </declare-styleable>
+</resources>
