@@ -21,9 +21,9 @@
         <!--页面标题-->
         <attr name="title" format="string" />
         <!--页面标题颜色-->
-        <attr name="titleColor" format="color"/>
+        <attr name="title_color" format="color"/>
         <!--页面标题大小-->
-        <attr name="titleSize" format="dimension"/>
+        <attr name="title_size" format="dimension"/>
         <!--右边操作图标-->
         <attr name="rightImageRes" format="reference" />
         <!--右边操作文字-->

@@ -8,6 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import toolkit.cala.normal.BuildConfig;
+import toolkit.cala.normal.net.constant.BaseConstants;
 
 /**
  * package name:toolkit.cala.normal.net
@@ -18,8 +19,6 @@ import toolkit.cala.normal.BuildConfig;
 public class RetrofitManager {
 
     //设置超时时间
-    private int mConnectTimeout = 45;
-    private int mReadTimeout = 45;
     private Retrofit mRetrofit;
 
 
@@ -28,13 +27,12 @@ public class RetrofitManager {
 
         // 创建 OKHttpClient
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
-        builder.connectTimeout(mConnectTimeout, TimeUnit.SECONDS);//连接超时时间
-        builder.readTimeout(mReadTimeout, TimeUnit.SECONDS);//读操作超时时间
+        builder.connectTimeout(BaseConstants.CONNECT_TIME, TimeUnit.SECONDS);//连接超时时间
+        builder.readTimeout(BaseConstants.TIME_OUT, TimeUnit.SECONDS);//读操作超时时间
 
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
             httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
             builder.addInterceptor(httpLoggingInterceptor);
         }
 
@@ -46,14 +44,6 @@ public class RetrofitManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(baseUrl)
                 .build();
-    }
-
-    public void setConnectTimeout(int connectTimeout) {
-        mConnectTimeout = connectTimeout;
-    }
-
-    public void setReadTimeout(int readTimeout) {
-        mReadTimeout = readTimeout;
     }
 
 
